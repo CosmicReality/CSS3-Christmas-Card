@@ -130,6 +130,16 @@ body, html{
 	margin-left: 250px;
 	margin-top: -130px;
 }
+.github_link{
+	z-index: 10;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	opacity: .5;
+	&:hover{
+		opacity: 1;		
+	}
+}
 .poppen{
 	position: absolute;
 	bottom: 290px;
