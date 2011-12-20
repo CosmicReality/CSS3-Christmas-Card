@@ -1,0 +1,295 @@
+$dark_blue: #083971;
+$light_blue: #7db9e8;
+$base_white: #FFF;
+
+/* Define keyframes for Gecko browsers */
+@-moz-keyframes snowFall{
+	0%{
+		margin-top: -10px;
+		opacity: 1;
+	}
+	90%{
+		opacity: 1;		
+	}
+	100%{
+		margin-top: 600px;
+		opacity: 0;
+	}
+}
+
+/* Define keyframes for webkit browsers */
+@-webkit-keyframes snowFall{
+	0%{
+		margin-top: -10px;
+		opacity: 1;
+	}
+	90%{
+		opacity: 1;
+	}
+	100%{
+		margin-top: 600px;
+		opacity: 0;
+	}
+}
+
+body, html{
+	height: 100%;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+	background-color: red;
+	background: -moz-linear-gradient(top, $light_blue 0%, $dark_blue 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$light_blue), color-stop(100%,$dark_blue)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, $light_blue 0%,$dark_blue 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, $light_blue 0%,$dark_blue 100%); /* Opera 11.10+ */
+	overflow: hidden;
+}
+.snow-container{
+	position: relative;
+	height: 100%;
+	margin-top: -20px;
+	width: 150%;
+	overflow: hidden;
+	z-index: 3;
+
+	div{
+		float: left;
+		width: 10px;
+		height: 10px;
+		border-radius: 5px;
+		background: $base_white;
+		margin: 10px;
+		
+		/* webkit browser */
+		-webkit-animation-name: snowFall;
+		-webkit-animation-duration: 8s;
+		-webkit-animation-iteration-count:infinite;
+		-webkit-animation-play-state:running;
+		
+		/* gecko browser */
+		-moz-animation-name: snowFall;
+		-moz-animation-duration: 8s;
+		-moz-animation-iteration-count:infinite;
+		-moz-animation-play-state:running;
+		
+		/* define speeds */
+		&.slow{
+			-webkit-animation-duration: 8s;
+			-moz-animation-duration: 8s;
+		}
+		&.fast{
+			-webkit-animation-duration: 6s;
+			-moz-animation-duration: 6s;
+		}
+		
+		/* define delay */
+		&.del0{
+			-webkit-animation-delay: 0s;
+			-moz-animation-delay: 0s;
+		}
+		&.del1{
+			-webkit-animation-delay: 1s;
+			-moz-animation-delay: 1s;
+		}
+		&.del2{
+			-webkit-animation-delay: 2s;
+			-moz-animation-delay: 2s;
+		}
+		&.del3{
+			-webkit-animation-delay: 3s;
+			-moz-animation-delay: 3s;
+		}
+	
+	}
+}
+.snow-ground{
+	position: absolute;
+	width: 100%;
+	bottom: 0px;
+	height: 300px;
+	background-color: #FFF;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, darken(#fff, 10%)), color-stop(100%, #fff));
+	background: -moz-gradient(linear, left top, left bottom, color-stop(0%, darken(#fff, 10%)), color-stop(100%, #fff));
+	background: -moz-linear-gradient(bottom, darken(#fff, 10%) 49%, #fff 75%);
+
+}
+.wens{
+	position: absolute;
+	z-index: 10;
+	top: 0px;
+	left: 600px;
+	font-family: 'overlock';
+	color: #FFF;
+	width: 250px;
+	text-align: center;
+	float: right;
+	margin-right: 150px;
+	margin-top: 50px;
+}
+.pop_right{
+	margin-left: 250px;
+	margin-top: -130px;
+}
+.poppen{
+	position: absolute;
+	bottom: 290px;
+}
+.sneeuwpop{
+	.head{
+		position: relative;
+		margin-left: 125px;
+		margin-top: 50px;
+		height: 100px;
+		z-index: 2;
+		.plane{
+			position: absolute;
+			height: 80px;
+			width: 80px;
+		}
+		.head_top{
+			left: 35px;
+			top: -37px;
+			background-color: $base_white;
+		 
+			-webkit-transform: rotate(-45deg) skew(15deg, 15deg);
+		    -moz-transform: rotate(-45deg) skew(15deg, 15deg);
+		    -o-transform: rotate(-45deg) skew(15deg, 15deg);
+		    -ms-transform: rotate(-45deg) skew(15deg, 15deg);
+		    transform: rotate(-45deg) skew(15deg, 15deg);
+		}
+		.head_front{
+			background-color: darken($base_white, 5%);
+			top: 25px;
+			-webkit-transform: rotate(15deg) skew(15deg, 15deg);
+		    -moz-transform: rotate(15deg) skew(15deg, 15deg);
+		    -o-transform: rotate(15deg) skew(15deg, 15deg);
+		    -ms-transform: rotate(15deg) skew(15deg, 15deg);
+		    transform: rotate(15deg) skew(15deg, 15deg);
+		
+			.left_eye, .right_eye{
+				background-color: #FFF;
+				height: 5px;
+				width: 5px;
+				border-radius: 5px;
+				padding: 5px;
+				div{
+					background-color: #000;
+					height: 5px;
+					width: 5px;
+					border-radius: 2px;
+				}
+			}
+			
+			.left_eye{
+				margin-top: 20px;
+				margin-left: 50px;
+			}
+			.right_eye{
+				margin-top: -10px;
+				margin-left: 20px;
+			}
+			.mouth{
+				margin-top: 45px;
+				font-size: 18pt;
+				-webkit-transform: rotate(90deg);
+				-moz-transform: rotate(90deg);
+			}
+		}
+		.head_side{	
+			top: 25px;
+			left: 70px;
+			background-color: darken($base_white, 10%);
+			-webkit-transform: rotate(-15deg) skew(-15deg, -15deg);
+		    -moz-transform: rotate(-15deg) skew(-15deg, -15deg);
+		    -o-transform: rotate(-15deg) skew(-15deg, -15deg);
+		    -ms-transform: rotate(-15deg) skew(-15deg, -15deg);
+		    transform: rotate(-15deg) skew(-15deg, -15deg);	
+		
+			.left_eye, .right_eye{
+				background-color: #FFF;
+				height: 5px;
+				width: 5px;
+				border-radius: 5px;
+				padding: 5px;
+				div{
+					background-color: #000;
+					height: 5px;
+					width: 5px;
+					border-radius: 2px;
+				}
+			}
+			.left_eye{
+				margin-top: 20px;
+				margin-left: 50px;
+			}
+			.right_eye{
+				margin-top: -10px;
+				margin-left: 20px;
+			}
+			.mouth{
+				margin-top: 45px;
+				font-size: 18pt;
+				-webkit-transform: rotate(90deg);
+				-moz-transform: rotate(90deg);
+			}
+		}
+	}
+	
+	.body{
+		position: relative;
+		z-index: 1;
+		margin-left: 125px;
+		margin-top: -65px;
+		
+		.plane{
+			position: absolute;
+			width: 100px;
+			height: 100px;
+		}
+		
+		.body_top{
+			left: 25px;
+			top: 0px;
+			background-color: $base_white;
+			-webkit-transform: rotate(-45deg) skew(15deg, 15deg);
+		    -moz-transform: rotate(-45deg) skew(15deg, 15deg);
+		    -o-transform: rotate(-45deg) skew(15deg, 15deg);
+		    -ms-transform: rotate(-45deg) skew(15deg, 15deg);
+		    transform: rotate(-45deg) skew(15deg, 15deg);
+		}
+		
+		.body_front{
+			background-color: darken($base_white, 5%);
+			top: 77px;
+			left: -19px;
+			-webkit-transform: rotate(15deg) skew(15deg, 15deg);
+		    -moz-transform: rotate(15deg) skew(15deg, 15deg);
+		    -o-transform: rotate(15deg) skew(15deg, 15deg);
+		    -ms-transform: rotate(15deg) skew(15deg, 15deg);
+		    transform: rotate(15deg) skew(15deg, 15deg);
+		}
+		
+		.body_side{	
+			left: 70px;
+			top: 77px;
+			background-color: darken($base_white, 10%);
+			-webkit-transform: rotate(-15deg) skew(-15deg, -15deg);
+		    -moz-transform: rotate(-15deg) skew(-15deg, -15deg);
+		    -o-transform: rotate(-15deg) skew(-15deg, -15deg);
+		    -ms-transform: rotate(-15deg) skew(-15deg, -15deg);
+		    transform: rotate(-15deg) skew(-15deg, -15deg);
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

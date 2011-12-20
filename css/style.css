@@ -1,0 +1,234 @@
+/* Define keyframes for Gecko browsers */
+@-moz-keyframes snowFall {
+  0% {
+    margin-top: -10px;
+    opacity: 1; }
+
+  90% {
+    opacity: 1; }
+
+  100% {
+    margin-top: 600px;
+    opacity: 0; } }
+
+/* Define keyframes for webkit browsers */
+@-webkit-keyframes snowFall {
+  0% {
+    margin-top: -10px;
+    opacity: 1; }
+
+  90% {
+    opacity: 1; }
+
+  100% {
+    margin-top: 600px;
+    opacity: 0; } }
+
+body, html {
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  background-color: red;
+  background: -moz-linear-gradient(top, #7db9e8 0%, #083971 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7db9e8), color-stop(100%, #083971));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #7db9e8 0%, #083971 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #7db9e8 0%, #083971 100%);
+  /* Opera 11.10+ */
+  overflow: hidden; }
+
+.snow-container {
+  position: relative;
+  height: 100%;
+  margin-top: -20px;
+  width: 150%;
+  overflow: hidden;
+  z-index: 3; }
+  .snow-container div {
+    float: left;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background: white;
+    margin: 10px;
+    /* webkit browser */
+    -webkit-animation-name: snowFall;
+    -webkit-animation-duration: 8s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-play-state: running;
+    /* gecko browser */
+    -moz-animation-name: snowFall;
+    -moz-animation-duration: 8s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-play-state: running;
+    /* define speeds */
+    /* define delay */ }
+    .snow-container div.slow {
+      -webkit-animation-duration: 8s;
+      -moz-animation-duration: 8s; }
+    .snow-container div.fast {
+      -webkit-animation-duration: 6s;
+      -moz-animation-duration: 6s; }
+    .snow-container div.del0 {
+      -webkit-animation-delay: 0s;
+      -moz-animation-delay: 0s; }
+    .snow-container div.del1 {
+      -webkit-animation-delay: 1s;
+      -moz-animation-delay: 1s; }
+    .snow-container div.del2 {
+      -webkit-animation-delay: 2s;
+      -moz-animation-delay: 2s; }
+    .snow-container div.del3 {
+      -webkit-animation-delay: 3s;
+      -moz-animation-delay: 3s; }
+
+.snow-ground {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  height: 300px;
+  background-color: #FFF;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e6e6e6), color-stop(100%, white));
+  background: -moz-gradient(linear, left top, left bottom, color-stop(0%, #e6e6e6), color-stop(100%, white));
+  background: -moz-linear-gradient(bottom, #e6e6e6 49%, white 75%); }
+
+.wens {
+  position: absolute;
+  z-index: 10;
+  top: 0px;
+  left: 600px;
+  font-family: 'overlock';
+  color: #FFF;
+  width: 250px;
+  text-align: center;
+  float: right;
+  margin-right: 150px;
+  margin-top: 50px; }
+
+.pop_right {
+  margin-left: 250px;
+  margin-top: -130px; }
+
+.poppen {
+  position: absolute;
+  bottom: 290px; }
+
+.sneeuwpop .head {
+  position: relative;
+  margin-left: 125px;
+  margin-top: 50px;
+  height: 100px;
+  z-index: 2; }
+  .sneeuwpop .head .plane {
+    position: absolute;
+    height: 80px;
+    width: 80px; }
+  .sneeuwpop .head .head_top {
+    left: 35px;
+    top: -37px;
+    background-color: white;
+    -webkit-transform: rotate(-45deg) skew(15deg, 15deg);
+    -moz-transform: rotate(-45deg) skew(15deg, 15deg);
+    -o-transform: rotate(-45deg) skew(15deg, 15deg);
+    -ms-transform: rotate(-45deg) skew(15deg, 15deg);
+    transform: rotate(-45deg) skew(15deg, 15deg); }
+  .sneeuwpop .head .head_front {
+    background-color: #f2f2f2;
+    top: 25px;
+    -webkit-transform: rotate(15deg) skew(15deg, 15deg);
+    -moz-transform: rotate(15deg) skew(15deg, 15deg);
+    -o-transform: rotate(15deg) skew(15deg, 15deg);
+    -ms-transform: rotate(15deg) skew(15deg, 15deg);
+    transform: rotate(15deg) skew(15deg, 15deg); }
+    .sneeuwpop .head .head_front .left_eye, .sneeuwpop .head .head_front .right_eye {
+      background-color: #FFF;
+      height: 5px;
+      width: 5px;
+      border-radius: 5px;
+      padding: 5px; }
+      .sneeuwpop .head .head_front .left_eye div, .sneeuwpop .head .head_front .right_eye div {
+        background-color: #000;
+        height: 5px;
+        width: 5px;
+        border-radius: 2px; }
+    .sneeuwpop .head .head_front .left_eye {
+      margin-top: 20px;
+      margin-left: 50px; }
+    .sneeuwpop .head .head_front .right_eye {
+      margin-top: -10px;
+      margin-left: 20px; }
+    .sneeuwpop .head .head_front .mouth {
+      margin-top: 45px;
+      font-size: 18pt;
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg); }
+  .sneeuwpop .head .head_side {
+    top: 25px;
+    left: 70px;
+    background-color: #e6e6e6;
+    -webkit-transform: rotate(-15deg) skew(-15deg, -15deg);
+    -moz-transform: rotate(-15deg) skew(-15deg, -15deg);
+    -o-transform: rotate(-15deg) skew(-15deg, -15deg);
+    -ms-transform: rotate(-15deg) skew(-15deg, -15deg);
+    transform: rotate(-15deg) skew(-15deg, -15deg); }
+    .sneeuwpop .head .head_side .left_eye, .sneeuwpop .head .head_side .right_eye {
+      background-color: #FFF;
+      height: 5px;
+      width: 5px;
+      border-radius: 5px;
+      padding: 5px; }
+      .sneeuwpop .head .head_side .left_eye div, .sneeuwpop .head .head_side .right_eye div {
+        background-color: #000;
+        height: 5px;
+        width: 5px;
+        border-radius: 2px; }
+    .sneeuwpop .head .head_side .left_eye {
+      margin-top: 20px;
+      margin-left: 50px; }
+    .sneeuwpop .head .head_side .right_eye {
+      margin-top: -10px;
+      margin-left: 20px; }
+    .sneeuwpop .head .head_side .mouth {
+      margin-top: 45px;
+      font-size: 18pt;
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg); }
+.sneeuwpop .body {
+  position: relative;
+  z-index: 1;
+  margin-left: 125px;
+  margin-top: -65px; }
+  .sneeuwpop .body .plane {
+    position: absolute;
+    width: 100px;
+    height: 100px; }
+  .sneeuwpop .body .body_top {
+    left: 25px;
+    top: 0px;
+    background-color: white;
+    -webkit-transform: rotate(-45deg) skew(15deg, 15deg);
+    -moz-transform: rotate(-45deg) skew(15deg, 15deg);
+    -o-transform: rotate(-45deg) skew(15deg, 15deg);
+    -ms-transform: rotate(-45deg) skew(15deg, 15deg);
+    transform: rotate(-45deg) skew(15deg, 15deg); }
+  .sneeuwpop .body .body_front {
+    background-color: #f2f2f2;
+    top: 77px;
+    left: -19px;
+    -webkit-transform: rotate(15deg) skew(15deg, 15deg);
+    -moz-transform: rotate(15deg) skew(15deg, 15deg);
+    -o-transform: rotate(15deg) skew(15deg, 15deg);
+    -ms-transform: rotate(15deg) skew(15deg, 15deg);
+    transform: rotate(15deg) skew(15deg, 15deg); }
+  .sneeuwpop .body .body_side {
+    left: 70px;
+    top: 77px;
+    background-color: #e6e6e6;
+    -webkit-transform: rotate(-15deg) skew(-15deg, -15deg);
+    -moz-transform: rotate(-15deg) skew(-15deg, -15deg);
+    -o-transform: rotate(-15deg) skew(-15deg, -15deg);
+    -ms-transform: rotate(-15deg) skew(-15deg, -15deg);
+    transform: rotate(-15deg) skew(-15deg, -15deg); }
